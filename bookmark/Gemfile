@@ -8,6 +8,7 @@ gem 'rcodetools'
 gem 'fastri'
 
 gem 'rake'
+gem 'nokogiri'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem "activerecord", "< 5.0.0"
