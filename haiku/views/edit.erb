@@ -2,14 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>句を詠みなおす</title>
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/haiku.css">
 </head>
 <body>
-  <form action="/renew/<%= @content.id %>" method="post">
-    <p>名前：<input type="text" name="user_name" value="<%= @content.name %>"></p>
-    <p>本文：<input type="text" name="body" value="<%= @content.body %>"></p>
-    <input type="submit" value="編集完了">
-  </form>
+  <div id="modal-view" class="edit-view">
+    <div class="form-box">
+      <h2>句を詠みなおす</h2>
+      <form action="/renew/<%= @content.id %>" method="post">
+        <h3>上の句</h3>
+        <input type="text" maxlength="5" name="haiku1" placeholder="5文字まで" value="<%= @content.haiku1 %>">
+        <input type="text" maxlength="7" name="haiku2" placeholder="7文字まで" value="<%= @content.haiku2 %>">
+        <input type="text" maxlength="5" name="haiku3" placeholder="5文字まで" value="<%= @content.haiku3 %>">
+        <h3>下の句</h3>
+        <input type="text" maxlength="7" name="haiku4" placeholder="7文字まで" value="<%= @content.haiku4 %>">
+        <input type="text" maxlength="7" name="haiku5" placeholder="7文字まで" value="<%= @content.haiku5 %>">
+        <h3>ペンネーム</h3>
+        <input type="text" maxlength="10" name="author" placeholder="詠み人知らず" value="<%= @content.author %>">
+        <input type="submit" value="再 投 稿">
+      </form>
+    </div>
+  </div>
 </body>
 </html>
