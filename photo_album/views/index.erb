@@ -2,36 +2,45 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Photo Album</title>
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/photoalbum.css">
 </head>
 <body>
-  <form action="/new" method="post" enctype="multipart/form-data">
-    <p>名前：<input type="text" name="user_name"></p>
-    <p>本文：<input type="text" name="body"></p>
-    <p><input type="file" name="file"></p>
-    <input type="submit" value="投稿">
-  </form>
-
-  <ul>
-    <% @contents.each do |content|  %>
-      <li>
-        <p><%= content.name %></p>
-        <p><%= content.body %></p>
-        <% unless content.img.empty? %>
-          <p><img src="<%= content.img %>"></p>
-        <% end %>
-        <span>
-          <form action="/delete/<%= content.id %>" method="post">
-            <input type="submit" value="削除">
-          </form>
-        </span>
-        <span>
+  <header>
+    <h1> PHOTO ALBUM</h1>
+    <div id="form-box">
+      <form action="/new" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="タイトル">
+        <textarea name="body" cols="30" rows="10" placeholder="画像の説明"></textarea>
+        <input type="file" name="file">
+        <input type="submit" value="投稿">
+      </form>
+    </div>
+  </header>
+  <main>
+    <% @contents.each do |content| %>
+    <article>
+      <figure>
+        <div class="edit">
           <form action="/edit/<%= content.id %>" method="post">
             <input type="submit" value="編集">
           </form>
-      </li>
+          <form action="/delete/<%= content.id %>" method="post">
+            <input type="submit" value="削除">
+          </form>
+        </div>
+        <% unless content.img.empty? %>
+        <img src="<%= content.img %>" alt="">
+        <% end %>
+      </figure>
+      <section>
+        <h3><%= content.title %></h3>
+        <p><%= content.body %></p>
+      </section>
+    </article>
     <% end %>
-  </ul>
+  </main>
 </body>
 </html>
