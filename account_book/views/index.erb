@@ -3,8 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>account_book</title>
+  <script src="/assets/js/Chart.js"></script>
 </head>
 <body>
+
+  <form action="/create" method="post">
+    <label for="title">商品名</label>
+    <input type="text" name="title" id="title">
+    <label for="price">金額</label>
+    <input type="text" name="price" id="price">
+    <select name="category" id="category">
+      <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="追加">
+  </form>
+
+  <ul>
+    <% @categories.each do |category| %>
+    <li><a href="/category/<%= category.id %>"><%= category.name %></a></li>
+    <% end %>
+  </ul>
+
+  <% if @category_name.present? %>
+  <h2><%= @category_name %></h2>
+  <% end %>
+
+  <div>
+    <% @items.each do |item| %>
+    <div>
+      <p><%= item.title %></p>
+      <p><%= item.price %>円</p>
+      <p><%= item.category.try(:name) %></p>
+      <span>
+        <form action="/delete/<%= item.id %>" method="post">
+          <input type="submit" value="削除">
+        </form>
+      </span>
+      <span>
+        <form action="/edit/<%= item.id %>" method="post">
+          <input type="submit" value="編集">
+        </form>
+      </span>
+    </div>
+    <% end %>
+  </div>
+  <div>
+    <p>合計:<%= @total %>円</p>
+  </div>
+
+  <canvas id="graph"></canvas>
+  <script>
+    ctx = document.getElementById('graph')
+    ctx.width = 500;
+    clr = ['lightsalmon', 'palegreen', 'lightskyblue', 'plum', 'silver', 'pink']
+    const price = [],
+      colors = [],
+      labels = []
+    <% @items.each_with_index do |item, idx| %>
+    price.push(<%= item.price %>)
+    labels.push('<%= item.title %>')
+    colors.push(clr[<%= idx % 6 %>])
+    <% end %>
+    const data = {
+      labels: labels,
+      datasets: [{
+        data: price,
+        backgroundColor: colors
+      }]
+    }
+    const myDoughnut = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
+      options: {
+        responsive: false
+      }
+    })
+  </script>
 
 </body>
 </html>
