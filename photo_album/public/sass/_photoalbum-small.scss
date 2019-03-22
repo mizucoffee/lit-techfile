@@ -1,0 +1,12 @@
+$small-screen-down: 500px !default;
+@media only screen and (max-width: $small-screen-down) {
+// ここからmedia screenの設定
+main {
+  .form-box {
+    form {
+        width: 100%;
+    }
+  }
+}
+// ここまでmedia screenの設定
+}

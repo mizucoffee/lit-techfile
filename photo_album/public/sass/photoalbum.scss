@@ -1,0 +1,80 @@
+@import "compass/reset";
+@import "compass";
+@import "himenon-asset";
+@import "customBtn";
+/* Google Fonts */
+@import url(http://fonts.googleapis.com/css?family=Elsie:400,900);
+
+// Color
+$lit-red:    rgb(230, 60, 53);
+$lit-blue:   rgb(0, 155, 219);
+$lit-green:  rgb(103, 182, 45);
+$lit-yellow: rgb(250, 199, 0);
+$lit-purple: rgb(187, 57, 255);
+$lit-orange: rgb(255, 139, 34);
+
+// Initail Wrapper Width
+$content-width: 90%;
+
+// 全体に対する設定
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  @include box-sizing(border-box);
+}
+
+// Wrapperの設定
+%wrapper {
+  width: $content-width;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body {
+  background-color: #EEE;
+}
+header {
+  padding: 20px 0;
+  width: $content-width - 0.7%;
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: #FFF;
+  h1 {
+    font-size: 42px;
+    text-align: center;
+    font-family: 'Elsie', cursive;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+  #form-box {
+    @include photoalbum-formbox();
+  }
+}
+
+// mainコンテンツの設定
+main {
+  @extend %wrapper;
+  // background-color: red;
+  @include flexbox-parent();
+  article {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 5px 10px 5px;
+    background-color: #fff;
+    overflow: hidden;
+    @include flexbox-child();
+    @include photoalbum-figure();
+    @include photoalbum-ui();
+  }
+}
+
+.edit-view {
+  textarea {
+    height: auto !important;
+  }
+}
+
+@import "photoalbum-small";
+
+/* Created by Kosei Himeno. Last Update 2015 June */
