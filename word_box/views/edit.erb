@@ -2,14 +2,24 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>単語帳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/wordbox.css">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
-  <form action="/renew/<%= @content.id %>" method="post">
-    <p>名前：<input type="text" name="user_name" value="<%= @content.name %>"></p>
-    <p>本文：<input type="text" name="body" value="<%= @content.body %>"></p>
-    <input type="submit" value="編集完了">
-  </form>
+  <div id="form-box" class="edit-view">
+    <form action="/renew/<%= @content.id %>" method="post">
+      <h3>編集フォーム</h3>
+      <h4>見出し</h4>
+      <input type="text" placeholder="タイトル" name="title" value="<%= @content.title %>">
+      <h4>本文</h4>
+      <textarea name="body" cols="30" rows="10"><%= @content.body %></textarea>
+      <h4>参考リンク</h4>
+      <input type="text" placeholder="リンク先のタイトル" name="linkTitle" value="<%= @content.linkTitle %>">
+      <input type="url" placeholder="URL" name="url" value="<%= @content.url %>">
+      <input type="submit" value="編集完了">
+    </form>
+  </div>
 </body>
 </html>

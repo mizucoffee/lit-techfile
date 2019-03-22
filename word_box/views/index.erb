@@ -2,32 +2,46 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>単語帳</title>
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/wordbox.css">
 </head>
 <body>
-  <form action="/new" method="post">
-    <p>名前：<input type="text" name="user_name"></p>
-    <p>本文：<input type="text" name="body"></p>
-    <input type="submit" value="投稿">
-  </form>
+  <header>
+    <h1><a href="#form-box">★</a></h1>
+  </header>
+  <div id="form-box">
+    <form action="/new" method="post">
+      <h3>登録フォーム</h3>
+      <h4>見出し</h4>
+      <input type="text" placeholder="タイトル" name="title">
+      <h4>本文</h4>
+      <textarea name="body" cols="30" rows="10"></textarea>
+      <h4>参考リンク</h4>
+      <input type="text" placeholder="リンク先のタイトル" name="linkTitle">
+      <input type="url" placeholder="URL" name="url">
+      <input type="submit" value="投稿">
+    </form>
+  </div>
 
-  <ul>
-    <% @contents.each do |content|  %>
-      <li>
-        <p><%= content.name %></p>
-        <p><%= content.body %></p>
-        <span>
-          <form action="/delete/<%= content.id %>" method="post">
-            <input type="submit" value="削除">
-          </form>
-        </span>
-        <span>
-          <form action="/edit/<%= content.id %>" method="post">
-            <input type="submit" value="編集">
-          </form>
-      </li>
+  <main>
+    <% @contents.each do |content| %>
+    <article>
+      <h2><%= content.title %></h2>
+      <p><%= content.body %></p>
+      <p>参考リンク:<a href="<%= content.url %>"><%= content.linkTitle %></a></p>
+      <div class="edit">
+        <form action="/edit/<%= content.id %>" method="post">
+          <input type="submit" value="編集">
+        </form>
+        <form action="/delete/<%= content.id %>" method="post">
+          <input type="submit" value="削除">
+        </form>
+      </div>
+    </article>
     <% end %>
-  </ul>
+  </main>
+
 </body>
 </html>

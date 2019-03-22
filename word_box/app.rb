@@ -12,8 +12,10 @@ end
 
 post '/new' do
   Contribution.create({
-    name: params[:user_name],
-    body: params[:body]
+    title: params[:title],
+    body: params[:body],
+    linkTitle: params[:linkTitle],
+    url: params[:url]
   })
 
   redirect '/'
@@ -32,8 +34,10 @@ end
 post '/renew/:id' do
   content = Contribution.find(params[:id])
   content.update({
-    name: params[:user_name],
-    body: params[:body]
+    title: params[:title],
+    body: params[:body],
+    linkTitle: params[:linkTitle],
+    url: params[:url]
   })
   redirect '/'
 end
