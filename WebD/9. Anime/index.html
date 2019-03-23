@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ANIMELIT</title>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+  <div class="key-visual">
+
+    <header>
+
+      <!-- grid header-->
+      <div class="container">
+        <div class="col-4 col-first">
+          <h1><img src="img/logo.png" alt="ANIMELIT" width="120"></h1>
+        </div>
+        <div class="col-8 col-last">
+          <nav>
+            <ul>
+              <li><a href="#top">Top</a></li>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#character">Character</a></li>
+              <li><a href="#signup">Sign Up</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- grid key-visual  -->
+    <div class="container">
+      <div class="col-4 col-first">
+        <img src="img/girl.png" alt="">
+      </div>
+      <div class="col-8 col-last">
+        <p>テクテク放送局 100周年企画アニメーション</p>
+        <h2><img src="img/logo_big.png" alt="" width="ANIMELIT"></h2>
+        <p class="copy">世界を<strong>改竄</strong>せよ</p>
+        <p>
+          <em>20XX 9月より放送開始</em>
+          <em>EP01 セカイ</em>
+        </p>
+
+        <p class="scroll">
+          <a href="#introduction">
+            ▼ SCROLL
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="introduction">
+
+    <!-- grid introduction  -->
+    <div class="container">
+      <h3>Introduction</h3>
+      <div class="col-8 col-first">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rYH8exdFYro" frameborder="0" allowfullscreen></iframe>
+        <p>
+          20XX TOKYO<br>
+          世界は何者かに書き換えられた。<br>
+          異変に気づいた少年少女は、世界をあるべき姿に戻すため、<br>
+          仕組まれた謎に挑んでいく…
+        </p>
+      </div>
+      <div class="col-4 col-last">
+        <img src="img/boy.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="character">
+
+    <!-- grid character  -->
+    <div class="container">
+      <h3>Character</h3>
+      <div class="girl col-3 col-first">
+        <img src="img/girl_icon.png" height="200" width="200" alt="">
+        <h4>Rin</h4>
+        <p>高校2年生<br>
+          本と猫をこよなく愛する。<br>
+          抜群の記憶力と洞察力を持つ。
+        </p>
+      </div>
+      <div class="boy col-3">
+        <img src="img/boy_icon.png" height="200" width="200" alt="">
+        <h4>Jin</h4>
+        <p>高校1年生<br>
+          ゲームと音楽を愛する。<br>
+          発想の転換、直感を重視する性格。
+        </p>
+      </div>
+      <div class="boy2 col-3">
+        <img src="img/boy_icon_2.png" height="200" width="200" alt="">
+        <h4>???</h4>
+        <p>高校?年生<br>
+          ??????????????<br>
+          ?????????????????????
+        </p>
+      </div>
+      <div class="girl2 col-3 col-last">
+        <img src="img/girl_icon_2.png" height="200" width="200" alt="">
+        <h4>???</h4>
+        <p>高校?年生<br>
+          ??????????????<br>
+          ?????????????????????
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!--   signup   -->
+  <div id="signup">
+    <div class="container">
+      <p>Why Don't You Change the World?</p>
+      <a href="https://life-is-tech.com/" target="_blank">SIGN UP</a>
+    </div>
+  </div>
+  <!--   footer   -->
+  <footer>
+    <div class="container">
+      <p>
+        <small>Copyright &copy; 2015 Life is Tech !</small>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script>
+    $(function() {
+      $('a[href^=#]').click(function() {
+        var speed = 500; // ミリ秒
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+        $('body,html').animate({
+          scrollTop: position
+        }, speed);
+        return false;
+      });
+    });
+  </script>
+</body></html>
