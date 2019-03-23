@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+/* すべての要素のmarginとpaddingを0に設定します */
+* {
+  margin: 0;
+  padding: 0;
+  /*
+    box-sizing: border-box;
+    プロパティは、widthの計算をborderとpaddingを含めたものにするための設定です。
+   */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* bodyの背景色を変更しています。 */
+body {
+  background: #f9f9f9;
+}
+
+.col-1 {
+  /* 1カラムの設定です */
+  width: 100px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 10, 2, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-2 {
+  /* 2カラムの設定です */
+  width: 200px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 20, 4, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-3 {
+  /* 3カラムの設定です */
+  width: 300px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 30, 6, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-4 {
+  /* 4カラムの設定です */
+  width: 400px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 40, 8, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-5 {
+  /* 5カラムの設定です */
+  width: 500px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 50, 10, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-6 {
+  /* 6カラムの設定です */
+  width: 600px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 60, 12, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-7 {
+  /* 7カラムの設定です */
+  width: 700px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 70, 14, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-8 {
+  /* 8カラムの設定です */
+  width: 800px;
+  padding: 5px;
+  float: left;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 80, 16, 0.4);
+  margin-bottom: 5px;
+  border: 1px solid black;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.col-9 {
+  /* 9カラムの設定です */
+  width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  /* コメントアウトの仕方は、「command + /」または「ctrl + /」 */
+  /* ここからレイアウトが組み終わったらコメントアウトをする */
+  /* height: 150px;
+  background-color: rgba(200, 90, 18, 0.4);
+  margin-bottom: 5px;
+  /* ここまでレイアウトが組み終わったらコメントアウトをする */
+}
+
+.hero {
+  /* ヒーロー画像の設定です CSSから画像を呼び出します */
+  width: 900px;
+  min-height: 290px;
+  /* 画像を呼び出すための[パス]はこのcssファイルを基準に設定します */
+  background-image: url("../images/hero.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+/* 02 全体を100pxの固定幅でラップしています。 */
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.lit-btn {
+  /* .lit-btnクラスを持った要素の設定です */
+  font-size: 12px;
+  color: #ff4c4c;
+  background: #f9f9f9;
+  border: 1px solid #ff4c4c;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 1s;
+  float: left;
+}
+
+.lit-btn:hover {
+  /* .lit-btnクラスを持つ要素がホバーされたときの設定です */
+  background: #ff4c4c;
+  color: #f9f9f9;
+}
+
+.menu {
+  /* .menuクラスを持った要素の設定です */
+  width: 900px;
+  padding: 0 20px;
+  overflow: hidden;
+  background: #ff4c4c;
+  margin-bottom: 20px;
+}
+
+.menu h1 {
+  /* .menuクラスの下にあるh1要素の設定です */
+  margin-top: 10px;
+  color: #f9f9f9;
+  font-size: 30px;
+  font-weight: 300;
+  float: left;
+  margin-right: 24px;
+}
+
+nav {
+  /* navタグの設定です */
+  float: right;
+}
+
+nav li {
+  /* navタグの下にあるliタグの設定です */
+  margin-top: 17px;
+  float: left;
+  list-style-type: none;
+}
+
+nav a {
+  /* navタグの下にあるaタグの設定です */
+  text-decoration: none;
+  color: #fff;
+  padding: 8px;
+  display: block;
+  transition: 0.5s;
+  border-bottom: 0 solid #f9f9f9;
+}
+
+nav a:hover {
+  background: #fff;
+  color: #ff4c4c;
+}
+
+.about {
+  /* .aboutクラスを持った要素の設定です */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about h2 {
+  /* h2タグの下にあるaタグの設定です */
+  color: #ff4c4c;
+  margin-bottom: 20px;
+}
+
+.article {
+  min-height: 200px;
+}
+
+.article img {
+  /* .articleクラスの下にある画像のサイズです */
+  width: 100%;
+  height: 192px;
+}
+
+.article h3 {
+  /* .articleクラスの下にあるh3タグのスタイルです */
+  color: #ff4c4c;
+  margin-bottom: 20px;
+}
+
+.article p {
+  /* .articleクラスの下にあるpタグのスタイルです */
+  font-size: 14px;
+  margin-bottom: 6px;
+}
