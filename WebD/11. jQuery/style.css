@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+}
+/* ==== タブページをつくろう：ここから ==== */
+ul#tab-menu {
+    text-align: center; /* ul#tab-menu > li を中央揃えするため */
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+#tab-menu > li {
+    display: inline; /* float:left を使わず、インライン要素にすることで横並びにいしている */
+    margin-right: 5px;
+}
+#tab-menu > li > a {
+    border: 1px solid black; /* ここで枠を表現 */
+    text-decoration: none; /* デフォルトの下線を消す */
+    padding: 15px;
+}
+/* aにホバーしたときの設定 */
+#tab-menu > li > a:hover {
+    background-color: #222;
+    color: #FFF;
+}
+/* .tab-pageは全てのタブページに共通に持たせる */
+.tab-page {
+    /* 正方形にするための設定 */
+    margin: 0 auto;
+    width: 375px;
+    height: 225px;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: rgb(20, 30, 70);
+    color: #FFF;
+    
+    /* 最初は全部非表示 */
+    display: none;
+}
+/* #tab1だけ最初に表示させておく */
+#tab1 {
+    display: block;
+}
+
+/* ==== タブページをつくろう：ここまで ==== */
+
+/* ==== アコーディオンメニューをつくろう：ここから ==== */
+
+/* nav内の要素の中央揃え */
+nav {
+    text-align: center;
+}
+/* nav後の要素の回り込みを解除 */
+nav:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+/* #mainMenu */
+#mainMenu {
+    display: inline-block; /* #mainMenu li の横幅にあわせて可変にする */
+    text-align: left;
+}
+#mainMenu li {
+	list-style: none;
+}
+#mainMenu > li {
+	width: 200px;
+	border-bottom: 1px solid black;
+	border-right: 1px solid #FFF;
+
+	/* 横並びのメニューバーにしたい時はfloatを有効にしましょう */
+/*	float: left;*/
+}
+#mainMenu > li > a {
+	width: 190px;
+	padding: 5px 0 5px 10px;
+	display: block;
+
+	background-color: rgb(40, 40, 40);
+	color: #FFF;
+}
+/* ホバーじの色を設定 */
+#mainMenu > li > a:hover {
+	background-color: blue;
+}
+#mainMenu > li:hover > ul.subMenu {
+	/* hoverした場合に表示したい */
+/*	display: block;*/
+}
+
+/* .subMenu */
+
+ul.subMenu {
+	/*position: absolute;*/
+	display: none;
+}
+.subMenu > li > a {
+	background-color: #FFF;
+	width: 180px;
+	padding: 10px;
+
+	display: block;
+}
+.subMenu > li > a:hover {
+	background-color: #AAA;
+}
+
+/* ==== アコーディオンメニューをつくろう：ここまで ==== */
+
+
+/* ==== スムーズスクロールをつくろう：ここから ==== */
+/* 右横付けに固定メニュー */
+.scroll-fixed {
+	padding: 40px;
+	width: 120px;
+	right: 0;
+
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+}
+.scroll-fixed li, 
+.scroll-fixed li a {
+    color: #FFF;
+}
+.scroll-fixed li a:hover {
+    color: yellow;
+}
+.content {
+	min-height: 600px;
+	padding: 20px;
+}
+.content:nth-child(even) {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+.content:nth-child(odd) {
+	background-color: rgba(0, 255, 0, 0.5);
+}
+/* ==== スムーズスクロールをつくろう：ここまで ==== */
