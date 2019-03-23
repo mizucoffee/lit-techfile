@@ -1,0 +1,193 @@
+/* ここでpaddingやmarginをwidthに含めるよ！ */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+/* 真ん中に寄せる */
+.container {
+  text-align: center;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  overflow: hidden;
+}
+
+
+
+/* 全部のアニメーションに共通のCSS */
+.box {
+  width: 440px;
+  text-align: left;
+  padding: 20px;
+  list-style: none;
+  float: left;
+}
+
+.box .cover {
+  /*  ⬇︎positionをrelativeにしよう  */
+  position: relative;
+}
+
+.box .cover img {
+  /*  ⬇︎画像を固定しよう  */
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+
+.box .caption {
+  /*  ⬇︎タイトルと本文を固定しよう  */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 20px;
+  background: #2c3f52;
+  color: #ed4e6e;
+}
+
+.box .caption h3 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+
+
+
+
+
+/* 各アニメーションのCSS */
+
+/* アニメーション 1 */
+.style-1 .caption {
+  width: 100%;
+  height: 100%;
+  /*  ⬇︎透明にするよ  */
+  opacity: 0;
+
+  /* ⬇︎動きをフワッとさせよう */
+  transition: transform .3s, opacity .3s;
+}
+
+.style-1 .cover:hover .caption {
+  /*  ⬇︎透明だったものを表示させるよ  */
+  opacity: 1;
+
+  /*  ⬇︎紺色のカバーの位置を右下にずらすよ  */
+  transform: translate(15px, 15px);
+}
+
+
+
+
+/* アニメーション 2 */
+.style-2 .cover img {
+  /*  ⬇︎画像を文字より手前にする  */
+  z-index: 10;
+
+  /*  ⬇︎画像の動きをなめらかに  */
+  transition: transform .4s;
+}
+
+.style-2 .cover:hover img {
+  /*  ⬇︎画像の位置を変える  */
+  transform: translateY(-90px);
+}
+
+.style-2 .caption {
+  height: 90px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+}
+
+
+
+
+
+/* アニメーション 3 */
+.style-3 .caption {
+  height: 100%;
+  width: 50%;
+
+  /*  ⬇︎透明にしてあげよう  */
+  opacity: 0;
+
+  /*  ⬇︎紺色部分のY軸が-90度回転している状態（紺色が隠れてる状態）  */
+  transform: rotateY(-90deg);
+
+  /*  ⬇︎動きをなめらかに */
+  transition: transform .4s, opacity .1s .3s;
+
+  /* ⬇︎transformが始まる原点の位置を設定するよ */
+  transform-origin: 0 0;
+}
+
+.style-3 .cover:hover .caption {
+  /*  ⬇︎透明だったものを表示させてあげよう  */
+  opacity: 1;
+
+  /*  ⬇︎紺色部分のY軸を0度に戻すよ（紺色が全部見えてる状態） */
+  transform: rotateY(0deg);
+
+  /*  ⬇︎動きをなめらかに */
+  transition: transform .4s, opacity .1s;
+}
+
+.style-3 .cover {
+  /*  ⬇︎画像の奥行きの深さを指定  */
+  perspective: 1700px;
+
+  /*  ⬇︎奥行きが始まる位置を設定  */
+  perspective-origin: left;
+}
+
+.style-3 .cover:hover img {
+  /*  ⬇︎画像を横にずらす  */
+  transform: translateX(25%);
+}
+
+.style-3 .cover img {
+  /*  ⬇︎動きをなめらかに  */
+  transition: transform .4s;
+}
+
+.style-3 .cover > div {
+  /*  ⬇︎はみ出した部分を隠す  */
+  overflow: hidden;
+}
+
+
+
+
+/* アニメーション 4 */
+.style-4 .cover img {
+  /*  ⬇︎画像を前に出してあげる  */
+  z-index: 10;
+
+  /*  ⬇︎動きをなめらかに  */
+  transition: transform .4s;
+}
+
+.style-4 .cover:hover img {
+  /*  ⬇︎画像をY軸方向に-50px移動させて、小さくする  */
+  transform: translateY(-50px) scale(0.5)
+}
+
+.style-4 .caption {
+  height: 100%;
+  width: 100%;
+}
+
+.style-4 .caption h3 {
+  margin-top: 50%;
+}
