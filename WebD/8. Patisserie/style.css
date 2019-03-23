@@ -1,0 +1,322 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* common */
+body {
+  background: url(img/bg.jpg);
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E8859C;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+/* layout */
+.container {
+  width: 960px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.sidebar {
+  float: left;
+  width: 280px;
+  margin-right: 40px;
+}
+
+.main {
+  float: left;
+  width: 640px;
+}
+
+/* header */
+header {
+  overflow: hidden;
+  padding: 16px 0 8px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+  vertical-align: bottom;
+  margin-top: 16px;
+}
+
+nav li {
+  margin-right: 16px;
+  font-family: 'EB Garamond', serif;
+  display: inline-block;
+  font-size: 20px;
+}
+
+nav a {
+  color: #4C3F32;
+}
+
+/* key-visual */
+.key-visual {
+  background: url(img/top_visual.jpg);
+  background-size: cover;
+  min-height: 480px;
+  margin-bottom: 16px;
+}
+
+.copy {
+  padding: 10px 30px 20px;
+  display: inline-block;
+  margin-top: 60px;
+  border: 1px solid #fff;
+}
+
+.copy h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.copy p {
+  font-size: 22px;
+  font-family: serif;
+  color: #e8859c;
+}
+
+.sidebar h2 {
+  font-family: 'EB Garamond', serif;
+  color: #4C3F32;
+  font-size: 30px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.sidebar h2 span {
+  font-family: serif;
+  margin-left: 16px;
+  font-size: 12px;
+}
+
+.news {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.news dt {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.news dd {
+  font-size: 11px;
+  color: #4C3F32;
+  margin-bottom: 8px;
+}
+
+.news a {
+  padding: 4px;
+  background: #e8859c;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  float: right;
+  margin-top: 16px;
+}
+
+.access {
+  margin-bottom: 30px;
+  line-height: 20px;
+}
+
+.access td {
+  color: #4C3F32;
+  font-size: 11px;
+  padding-right: 8px;
+}
+
+.access .time-row td {
+  font-size: 14px;
+}
+
+.access .time {
+  color: #e8859c;
+  font-weight: bold;
+}
+
+.train {
+  font-size: 12px;
+}
+
+.tel {
+  padding: 4px;
+  text-align: center;
+}
+
+.tel p {
+  color: #4C3F32;
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 4px;
+}
+
+.number {
+  color: #e8859c;
+  font-size: 30px;
+  font-family: serif;
+}
+
+/* main */
+.main h2 {
+  color: #e8859c;
+  font-family: 'EB Garamond', serif;
+  font-size: 30px;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.main h2 span {
+  color: #4C3F32;
+  font-family: serif;
+  margin-left: 16px;
+  font-size: 12px;
+}
+
+.menu {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.menu li {
+  float: left;
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.menu li:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* menu card */
+.menu img {
+  vertical-align: bottom;
+  border-top-right-radius: 15px;
+}
+
+.detail {
+  height: 106px;
+  padding: 12px;
+  background: #fff;
+  border-bottom-left-radius: 15px;
+}
+
+.title-english {
+  font-family: 'Petit Formal Script', cursive;
+  color: #e8859c;
+  font-size: 11px;
+}
+
+.title {
+  font-size: 15px;
+  font-family: serif;
+  border-bottom: 1px solid #e8859c;
+  margin-bottom: 8px;
+}
+
+.description {
+  color: #4C3F32;
+  font-size: 10px;
+  line-height: 18px;
+}
+
+/* concept */
+.concept {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.concept img {
+  margin: 15px 20px 20px 0;
+  transform: rotate(-8deg);
+  background: #fff;
+  box-shadow: 2px 4px 10px 5px #f3e0d4;
+  padding: 8px;
+}
+
+/* footer */
+footer {
+  background: #634A38;
+  color: #fff;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #fff;
+}
+
+.left-footer {
+  float: left;
+  width: 280px;
+  margin-right: 40px;
+}
+
+.right-footer {
+  float: left;
+  width: 640px;
+}
+
+footer ul {
+  margin-top: 8px;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 12px;
+}
+
+footer li:before {
+  content: '-';
+  color: #E8859C;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+footer small {
+  float: right;
+  margin-top: 20px;
+}
