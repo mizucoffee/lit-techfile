@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/stylesheets/photoalbum.css">
-</head>
-<body>
-  <header>
-    <h1> PHOTO ALBUM</h1>
-    <div id="form-box" class="edit-view">
-      <form action="/renew/<%= @content.id %>" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="タイトル" value="<%= @content.title %>">
-        <textarea name="body" cols="30" rows="10" placeholder="画像の説明"><%= @content.body %></textarea>
-        <input type="submit" value="投稿">
-      </form>
-    </div>
-  </header>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/photoalbum.css">
+  </head>
+  <body>
+    <header>
+      <h1> PHOTO ALBUM</h1>
+      <div id="form-box" class="edit-view">
+        <form action="/renew/<%= @content.id %>" method="post" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="タイトル" value="<%= @content.title %>">
+          <textarea name="body" cols="30" rows="10" placeholder="画像の説明"><%= @content.body %></textarea>
+          <input type="submit" value="投稿">
+        </form>
+      </div>
+    </header>
+  </body>
 </html>
