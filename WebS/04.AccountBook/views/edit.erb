@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>account_book</title>
-</head>
-<body>
-
-  <form action="/renew/<%= @item.id %>" method="post">
-    <label for="title">商品名</label>
-    <input type="text" name="title" value="<%= @item.title %>">
-    <label for="price">金額</label>
-    <input type="text" name="price" value="<%= @item.price %>">
-    <input type="submit" value="編集完了">
-  </form>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>account_book</title>
+  </head>
+  <body>
+    <form action="/renew/<%= @item.id %>" method="post">
+      <label for="title">商品名</label>
+      <input type="text" name="title" value="<%= @item.title %>">
+      <label for="price">金額</label>
+      <input type="text" name="price" value="<%= @item.price %>">
+      <input type="submit" value="編集完了">
+    </form>
+  </body>
 </html>
