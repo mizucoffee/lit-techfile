@@ -17,9 +17,20 @@ post '/new' do
     haiku3: params[:haiku3],
     haiku4: params[:haiku4],
     haiku5: params[:haiku5],
-    author: params[:author]
+    author: params[:author],
+    good: 0
   })
 
+  redirect '/'
+end
+
+
+post '/good/:id' do
+  content = Contribution.find(params[:id])
+  good = content.good
+  content.update({
+    good: good + 1
+  })
   redirect '/'
 end
 

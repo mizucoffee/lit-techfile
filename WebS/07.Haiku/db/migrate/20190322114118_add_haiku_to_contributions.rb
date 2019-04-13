@@ -8,6 +8,5 @@ class AddHaikuToContributions < ActiveRecord::Migration
     add_column :contributions, :author, :string
     remove_column :contributions, :name, :string
     remove_column :contributions, :body, :string
-    remove_column :contributions, :good, :integer
   end
 end
